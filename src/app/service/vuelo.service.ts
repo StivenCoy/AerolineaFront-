@@ -12,8 +12,11 @@ export class VueloService {
   ) { }
 
   // Método que obtiene la lista de vuelos
-  listarVuelos() {
-    const path = 'http://localhost:8080/api/vuelos/listar';
+  listarVuelos(fecha:Date,origen:String, destino:String,cantidad:number ) {
+    const path = 'http://localhost:8080/api/vuelos/destinos';
     return this.http.get<Vuelo[]>(path);
   }
+
+
+
 }
