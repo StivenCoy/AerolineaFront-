@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'aerolinea';
+  origenes = ["hooo", "laaa"];
+  selected : string='';
 }

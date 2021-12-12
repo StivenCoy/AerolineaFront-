@@ -1,0 +1,9 @@
+.origen, .destino,.personas,.fechas,.ciudadO, .ciudadD{
+    padding: 5px;
+    margin: 5px;
+}
+.origen, .destino,.personas,.fechas{
+    width: 50%;
+    height: 50%;
+    margin-left: 40%;
+}

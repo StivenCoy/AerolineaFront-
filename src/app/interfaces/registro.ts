@@ -1,5 +1,7 @@
+import { Pasajero } from "./pasajero";
+
 export interface Registro {
     idregistro:number;
     cantidadmillas:number;
-    idpasajero:object;
+    idpasajero:Pasajero;
 }

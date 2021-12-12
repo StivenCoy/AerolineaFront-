@@ -1,5 +1,7 @@
+import { Ciudadorigen } from "./ciudadorigen";
+
 export interface Ruta {
     idruta:number;
-    idciudadorig:object;
+    idciudadorig:Ciudadorigen;
     idciudaddes:object;
 }

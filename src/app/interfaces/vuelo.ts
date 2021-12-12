@@ -1,3 +1,5 @@
+import { Ruta } from "./ruta";
+
 export interface Vuelo {
     idvuelo:number;
     fecha:Date;
@@ -7,5 +9,5 @@ export interface Vuelo {
     numerovuelo:number;
     duracion:String;
     hora:String;
-    idruta:object;
+    idruta:Ruta;
 }

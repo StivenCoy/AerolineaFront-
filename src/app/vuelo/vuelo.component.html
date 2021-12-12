@@ -1,84 +1,60 @@
-<!-- <section class="empleados">
-    <html>
-      <div class="brutas">
-          <a class="icono"  [routerLink]="['/Rutas']" routerLinkActive="router-link-active">
-            <svg class="icon"  fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" /></svg>
-        </a>
-            <div class="vueloss">
-            <h1 class="vu"> Vuelos </h1>
-        </div>
-        </div>
-        <div class="bfiltrar">
-            <input type="text" class="nombre" placeholder="Ingrese la fecha">
-            <button (click)="vuelosFecha()" class="botonFiltrar"  >Filtrar por fecha</button>
-        </div>
-        
-        <button (click)="listarVuelos()" class="botonFiltrar"  >Listar Todos Los Vuelos</button>
-        <div class="tabla">
-    <table border="1" width="100%" id="miTabla">
-      <tr>
-        <th>Id Vuelo</th>
-        <th>Fecha Vuelo</th>
-        <th>Hora Vuelo</th>
-        <th>Id Avion</th>
-        <th>Id Ruta</th>
-      
-      </tr>
-      <ng-container *ngFor="let vuelo of lVuelos">
-      <tr>
-        <td>{{vuelo.idvuelo}}</td>
-        <td>{{vuelo.fechavuelo}}</td>
-        <td>{{vuelo.horavuelo}}</td>
-        <td>{{vuelo.idavion}}</td>
-        <th> 
-        </th>
-        <th>
-            <a  class="eliminar">
-                <svg (click)="eliminarVuelo(vuelo.idvuelo)" class="logoEliminar" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-            </a>
-        </th>
-      </tr>
-    </ng-container>
-    </table>
-    </div>
-    <div> 
-      <section class="vuelos">
-            <div class="pant">
-                 <div>
-                    <h1> Info vuelo </h1>
-                </div>
-                <div class="info">
-                    
-                    <div class="n1">
-                        <label class="idvuelo">Id Vuelo: </label>
-                        <input type="text" class="lidvuelo" id = vuelo>
-                    </div>
-                    <div class="n1">
-                        <label class="idruta">Id ruta: </label>
-                        <input type="text" class="lidvuelo" id = ruta>
-                    </div>
+<section class="empleados">
+    <html>  
+     <div  class = "origen">
+       <label class="ciudadO">Ciudad Origen</label>
+        <select class="form-select" [(ngModel)]="selected"  (change)="listarIda()">
+            <option *ngFor = "let o of origenes">{{o}} </option>
+        </select>
+     </div>
+     <div  class = "destino">
+        <label class="ciudadD">Ciudad destino</label>
+         <select class="form" [(ngModel)]="selecte" >
+             <option *ngFor = "let d of destinos">{{d}} </option>
+         </select>
+         <p>{{selecte}}</p>
+      </div>      
+      <div class="personas">
+        <label class="idvuelo"> Numero personas </label>
+        <input type="text" class="lidvuelo" id="vuelo" [(ngModel)]="cantidad">
+      </div>
+      <div class="fechas">
+        <input type="date" [(ngModel)]="fecha">
+      </div>
+      <div>
+        <!-- (click)="crearVuelo()"  -->
+        <button class="cVuelo" (click)="listarVuelos()" > Crear vuelo </button>
+      </div>
 
-                    <div class="n2">
-                        <label class="fechaVuelo">Fecha vuelo:</label>
-                        <input type="text" class="lfechaVuelo" id="fecha">
-                    </div>
-                    
-                    <div class="n3">
-                        <label class="horaVuelo">Hora vuelo:</label>
-                        <input type="text" class="lhoraVuelo" id=hora>
-                    </div>
-                    <div class="n4">
-                        <label class="idAvion">Id avion:</label>
-                        <input type="text" class="lidAvion" id ="avion">
-                    </div>
-                </div>
-                <div class="botones">
-                    <button (click)="crearVuelo()" class="cVuelo"> Crear vuelo </button>
-                    <button class="aActualizar"> Actualizar vuelo </button>
-                </div>
-            </div>
-    </section>
-    </div>
+      <div class="tabla">
+        <table width="100%" id="miTabla">
+         <tr>
+           <th> Fecha </th>
+           <th> Duracion </th>
+           <th> Escala </th>
+           <th> Precio Persona </th>
+           <th> Id Vuelo </th>
+         </tr>
+         <ng-container *ngFor="let vuelo of lVuelos">
+         <tr>
+           <td>{{vuelo}}</td>
+           <td>{{vuelo}}</td>
+           <td>{{vuelo}}</td>
+           <td>{{vuelo}}</td>
+           <td>{{vuelo}}</td>
+           <th> 
+           </th>
+           <!-- <th>
+               <a  class="eliminar">
+                   <svg (click)="eliminarVuelo(vuelo.idvuelo)" class="logoEliminar" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+               </a>
+           </th> -->
+          </tr>
+         </ng-container>
+        </table>
+       </div>
+       <!-- <div class="fechas">
+        <input type="date" [(ngModel)]="fechaR">
+      </div> -->
+
     </html>
-</section> -->
-
+</section>

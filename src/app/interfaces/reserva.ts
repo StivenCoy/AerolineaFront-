@@ -1,6 +1,8 @@
+import { Vuelo } from "./vuelo";
+
 export interface Reserva {
     idreserva:number;
     estado:String;
-    idvueloida:object;
-    idvuelovuelta:object;
+    idvueloida:Vuelo;
+    idvuelovuelta:Vuelo;
 }
