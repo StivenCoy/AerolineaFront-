@@ -17,5 +17,11 @@ export class VueloService {
     return this.http.get<Vuelo[]>(path);
   }
 
+  //Metodo que busca un vuelo
+   buscarVuelo(idvuelo:number ) {
+    const path = `http://localhost:8080/api/vuelos/buscar/${idvuelo}`;
+     return this.http.get<object[]>(path);
+  }
+
 
 }
